@@ -14,9 +14,7 @@ const Header = ({ onChange }) => {
 
     return (
         <div className="flex justify-between items-end" style={{ padding: "46px" }}>
-            <div
-                className="w-6/12 text-4xl font-bold" className = {classes.logo}
-            >
+            <div className="w-6/12 text-4xl font-bold" className = {classes.logo}>
                 Aurora.
             </div>
 
@@ -65,7 +63,8 @@ const useStyles = makeStyles({
     logo: {
         fontFamily: "Geller",
         fontSize: 50,
-        marginLeft: 100
+        marginLeft: 100,
+        fontWeight: 900
     },
     title: {
         borderRightColor: '#000',

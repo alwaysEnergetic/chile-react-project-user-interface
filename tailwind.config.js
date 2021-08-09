@@ -6,12 +6,22 @@ module.exports = {
       colors: {
         lightYellow: { t1: "#FE441A" },
         lightGray: "#D1CDC5",
-        tabBackground:'#F2F0ED'
-      },
-      fontFamily: {
+        tabBackground:'#f2f0ed',
+        contentBackground:'#f7f6f5'
+        },
+    fontFamily: {
         'sans': ["Roboto"]
+      },
+      width: {
+        '1/7' : '14.28%',
+        '6/7' : '85.71%',
       }
     },
+    borderRadius: {
+      'full' : '9999px',
+      'special': '26px',
+
+    }
   },
   variants: {
     extend: {},

@@ -10,18 +10,16 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const About = () => {
+const Third = () => {
     const classes = useStyles();
 
     return (
         <div className="wrap flex-1">
-            <div className={classes.container}>
-                <BodyContent />
-            </div>
+ 
             
-            <Introduction />
+        third
         </div>
     );
 };
 
-export default About;
+export default Third;

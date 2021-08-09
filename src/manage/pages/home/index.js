@@ -6,6 +6,8 @@ import Footer from "../../components/Footer";
 
 import BeginingSection from "./begining";
 import About from "./about";
+import Third from "./third";
+import Fourth from "./fourth";
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -25,8 +27,8 @@ const Home = () => {
       <Header onChange = {setTabIndex}/>
         {tabIndex===0 && <BeginingSection/>}
         {tabIndex===1 && <About/>}
-        {tabIndex===2 && <div>third screen</div>}
-        {tabIndex===3 && <div>forth screen</div>}
+        {tabIndex===2 &&  <Third/>}
+        {tabIndex===3 &&  <Fourth/>}
 
       
         <Footer/>

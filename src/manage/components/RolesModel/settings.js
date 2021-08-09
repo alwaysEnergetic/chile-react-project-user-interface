@@ -6,17 +6,17 @@ import IconButton from "../IconButton";
 
 const Setting = ({ profileClick, settingClick, logoutClick }) => {
   return (
-    <div className="flex bg-blue-500 px-40 justify-between">
+    <div className="flex px-40 justify-between">
       <div className="flex">
-        <div className="rounded-full w-28 h-28 flex items-center justify-center bg-lightGray">
-          <FontAwesomeIcon icon={faUser} size="4x" />
+        <div className="rounded-full w-36 h-36 flex items-center justify-center bg-lightGray">
+          <FontAwesomeIcon icon={faUser} size="5x" color = "#313131"/>
         </div>
-        <div className="bg-red-500">
-          <div className="font-sans"> textInComponent </div>
-          <div className="font-sans"> textInComponent </div>
+        <div className="px-12 py-3">
+          <div className="font-sans text-4xl font-black"> Bienvendio </div>
+          <div className="font-sans text-2xl"> Alonso Diaz </div>
         </div>
       </div>
-      <div className=" flex bg-green-500 items-end">
+      <div className="flex items-end">
         {buttonGroup.map((item, index) => {
           return (
             <IconButton
