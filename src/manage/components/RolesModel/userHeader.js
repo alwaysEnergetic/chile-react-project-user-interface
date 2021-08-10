@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Header = ({ onChange }) => {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
+    const [startDate, setStartDate] = useState(new Date());
 
     const handleChange = (event, newValue) => {
         onChange(newValue);
@@ -21,7 +24,7 @@ const Header = ({ onChange }) => {
             <div className="flex w-6/12">
                 <label className="font-black text-lg">
                     FECHA
-                    <input type="text" className={classes.textbox } value="   27 Julio, 2021" />
+                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
                 </label>
 
                 <label className="font-black text-lg border-r " style={{

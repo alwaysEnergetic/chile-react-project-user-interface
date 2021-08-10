@@ -18,6 +18,9 @@ const theme = createTheme({
     third: {
       main: "#FFF",
     },
+    tableBoardColor: {
+      main: "#f7f6f5"
+    }
 
   },
 });
