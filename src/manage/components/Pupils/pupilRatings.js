@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-
+import StudentTable from './studentTable'
+import StudentAlert  from './studentAlert'
 
 const useStyles = makeStyles((theme) => ({
     navbar: {
@@ -14,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
 
     tableBoard: {
         display: "flex",
-        padding: " 10px 0px",
         backgroundColor: theme.palette.tableBoardColor.main,
     },
 }));
@@ -54,11 +54,17 @@ const PupilRatings = () => {
             </div>
 
             <div className={classes.tableBoard}>
-              <div>
+              <div className="w-4/7 pl-28 pt-8">
+                <div>
+                    <p className = " text-lg font-bold"> Conjunto notas 1er semestre 2021</p>
+                </div>
+                <div>
+                    <StudentTable/>
+                </div>
 
               </div>
-              <div>
-
+              <div className="flex w-3/7 pt-8 pr-20 pl-10">
+                <StudentAlert/>
               </div>
             </div>
         </>

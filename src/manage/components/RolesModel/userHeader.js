@@ -1,78 +1,106 @@
-import React, {useState} from "react";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import {
+    makeStyles,
+} from "@material-ui/core/styles";
 import DatePicker from "react-datepicker";
+import setHours from "date-fns/setHours";
+import setMinutes from "date-fns/setMinutes";
 import "react-datepicker/dist/react-datepicker.css";
 
-const Header = ({ onChange }) => {
+const Header = () => {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
-    const [startDate, setStartDate] = useState(new Date());
 
-    const handleChange = (event, newValue) => {
-        onChange(newValue);
-        setValue(newValue);
+    const [startDate, setStartDate] = useState(
+        setHours(setMinutes(new Date(), 30), 16)
+    );
+
+
+    const [state, setState] = useState({
+        date: new Date(),
+    });
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            tick();
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
+    const tick = () => {
+        setState({ ...state, date: new Date() });
     };
 
     return (
-        <div className="flex justify-between items-end" style={{ padding: "46px" }}>
-            <div className="w-6/12 text-4xl font-bold" className = {classes.logo}>
+        <div
+            className="flex justify-between items-center"
+            style={{ padding: "46px" }}
+        >
+            <div className="w-7/12 text-4xl font-bold" className={classes.logo}>
                 Aurora.
             </div>
 
-            <div className="flex w-6/12">
-                <label className="font-black text-lg">
-                    FECHA
-                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-                </label>
+            <div className="flex w-5/12">
+                <div className="flex items-center mr-4">
+                    <div className="font-black text-lg mr-3">FECHA</div>
 
-                <label className="font-black text-lg border-r " style={{
-                borderRightWidth: 1, }}>
-                    HORA
-                    <input type="text" className= {classes.textbox} style = {{marginLeft:12}} value="      10:33:40" />
-                </label>
-                
-                <label style={{width:"5%"}}>
-                </label>    
+                    <DatePicker
+                        selected={startDate}
+                        onChange={(date) => setStartDate(date)}
+                        className={classes.datePicker}
+                        excludeTimes={[
+                            setHours(setMinutes(new Date(), 0), 17),
+                            setHours(setMinutes(new Date(), 30), 18),
+                            setHours(setMinutes(new Date(), 30), 19),
+                            setHours(setMinutes(new Date(), 30), 17),
+                        ]}
+                        dateFormat="MMMM d, yyyy"
+                    />
+                </div>
 
-                <label style={{width:"5%"}}>
-                </label>    
+                <div className="flex">
+                    <div className="font-black text-lg mr-3">HORA</div>
+                    <input
+                        type="text"
+                        className="w-28 rounded-lg h-7 text-center"
+                        value={state.date.toLocaleTimeString()}
+                    />
+                </div>
 
-                <label className="text-1xl">ES-EN</label>
+                <label className="text-1xl ml-20">ES-EN</label>
             </div>
         </div>
     );
 };
-
-const AntTabs = withStyles({
-    indicator: {
-        backgroundColor: "black",
-    },
-})(Tabs);
 
 const useStyles = makeStyles({
     root: {
         flexGrow: 1,
     },
     textbox: {
-      marginLeft:20, 
-      marginRight:12,
-      fontSize:16,
-      borderRadius:20,
-      width:"40%",
-      alignItems:"center"
+        marginLeft: 20,
+        marginRight: 12,
+        fontSize: 16,
+        borderRadius: 20,
+        width: "40%",
+        alignItems: "center",
     },
     logo: {
         fontFamily: "Geller",
         fontSize: 50,
         marginLeft: 100,
-        fontWeight: 900
+        fontWeight: 900,
     },
     title: {
-        borderRightColor: '#000',
-         opacity:0.9, 
-         borderRightStyle: 'solid'
+        borderRightColor: "#000",
+        opacity: 0.9,
+        borderRightStyle: "solid",
+    },
+    datePicker: {
+        width: 123,
+        height: 28,
+        borderRadius: 7,
+        marginLeft: 3
     },
 });
 

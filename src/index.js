@@ -20,7 +20,13 @@ const theme = createTheme({
     },
     tableBoardColor: {
       main: "#f7f6f5"
-    }
+    },
+    rightBorderColor: {
+      main: "#f2f0ed"
+    },
+    rightBoxBorder : {
+      main: "#D0CDC6"
+    },
 
   },
 });
