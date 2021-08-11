@@ -21,15 +21,8 @@ const SubTab = withStyles({
     padding: "0px 5px",
     '&:hover':{
     fontWeight: 900,
-
-
     }
   },
-  selected:{
-    
-    // backgroundColor:'red',
-    // borderTopLeftRadius:20,
-  }  
 })(Tab);
 
 
@@ -37,8 +30,9 @@ const SubTab = withStyles({
 const Header = ({onChange}) => {
     const [value, setValue] = React.useState(0);
     const handleChange = (event, newValue) => {
-      onChange(newValue);
       setValue(newValue)
+      onChange(newValue)
+
     };
 
   return (

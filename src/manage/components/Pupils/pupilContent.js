@@ -102,48 +102,66 @@ const SubTab = withStyles({
   }  
 })(Tab);
 
+
 export default function PupilContent() {
   //const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const[radioValue, setRadioValule] = React.useState("");
-  
+
+  const tabChange = (event,newValue) => {
+    setValue(newValue);
+
+  }
+  const handleChange = (event, newValue) => {
+    setRadioValule(newValue);
+  };
   return (
     <div className="flex flex-1 pl-24 pr-28">
       <div className="w-1/7  mt-12 bg-tabBackground rounded-l-special">
           <AntTabs
             value={value}
             orientation={'vertical'}
-            onChange={(event, newValue) => setValue(newValue)}
+            onChange={tabChange}
             indicatorColor="primary"
             textColor="primary"
             centered
           >
-            <SubTab label="LIBRO DE CLASES" />
-            <SubTab label="SALA DE CLASES"/>
-            <SubTab label="CIRCULARES" />
-            <SubTab label="FINANZAS" />
+
+                    <SubTab label="LIBRO DE CLASES" />
+                    <SubTab label="SALA DE CLASES"/>
+                    <SubTab label="CIRCULARES" />
+                    <SubTab label="FINANZAS" />
+
           </AntTabs> 
       </div>
+
       {value===0 && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> <Book/> </div>}
       {value===1 && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> <Classroom/> </div>}  
       {value===2 && <div className="w-6/7 bg-contentBackground  rounded-tl-special rounded-r-special min-w-61"> <Circular/> </div>}
       {value===3 && <div className="w-6/7 bg-contentBackground  rounded-tl-special rounded-r-special min-w-61"> <Finance/> </div>}
+
       <div className="w-10 h-10 bg-gray" style={{position:'absolute', bottom:220, right:64}}>
       <FormControl component="fieldset">
-          <RadioGroup defaultValue="roles" aria-label="roles" value={value} onChange={(event, newValue) => setRadioValule(newValue)} name="customized-radios">
+          <RadioGroup defaultValue="roles" aria-label="roles" value={radioValue} onChange={handleChange} name="customized-radios">
             <FormControlLabel value="pupil"  control={<StyledRadio />} label={<span style={{ fontSize: '9px', display: "flex", alignItems: "center" }}>ALUMNO </span>}/>
             <FormControlLabel value="admin" control={<StyledRadio />} label={<span style={{ fontSize: '9px', display: "flex", alignItems: "center" }}>ADMINISTRATIVO </span>}/>
             <FormControlLabel value="teacher" control={<StyledRadio />}label={<span style={{ fontSize: '9px', display: "flex", alignItems: "center" }}>PROFESOR </span>}/>
             <FormControlLabel value="attroney" control={<StyledRadio />} label={<span style={{ fontSize: '9px', display: "flex", alignItems: "center" }}>APODERADO </span>}/>
             <FormControlLabel value="external" control={<StyledRadio />} label={<span style={{ fontSize: '9px', display: "flex", alignItems: "center" }}>EXTERNO </span>}/>
+
           </RadioGroup>
         </FormControl>
       </div>
-        {radioValue==="pupil" && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> pupil </div>}
-        {radioValue==="admin" && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> admin </div>}
-        {radioValue==="teacher" && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> teacher </div>}
-        {radioValue==="attroney" && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> attroney </div>}
-        {radioValue==="external" && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> external </div>}
+      
+      {radioValue==="pupil" && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> pupil </div>}
+      {radioValue==="admin" && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> admin </div>}
+      {radioValue==="teacher" && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> teacher </div>}
+      {radioValue==="attroney" && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> attroney </div>}
+      {radioValue==="external" && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> external </div>}
+
+
+
       </div>
+
   );
 }
