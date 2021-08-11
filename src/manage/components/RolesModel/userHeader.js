@@ -58,7 +58,7 @@ const Header = () => {
                     />
                 </div>
 
-                <div className="flex">
+                <div className="flex pr-10">
                     <div className="font-black text-lg mr-3">HORA</div>
                     <input
                         type="text"
@@ -67,7 +67,7 @@ const Header = () => {
                     />
                 </div>
 
-                <label className="text-1xl ml-20">ES-EN</label>
+                <label className="text-1xl pl-10 border-l border-black">ES-EN</label>
             </div>
         </div>
     );

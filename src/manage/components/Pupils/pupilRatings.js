@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     tableBoard: {
         display: "flex",
         backgroundColor: theme.palette.tableBoardColor.main,
+        flexWrap:'wrap'
     },
 }));
 
@@ -54,16 +55,17 @@ const PupilRatings = () => {
             </div>
 
             <div className={classes.tableBoard}>
-              <div className="w-4/7 pl-28 pt-8">
+              <div className="pl-28 pt-8">
                 <div>
                     <p className = " text-lg font-bold"> Conjunto notas 1er semestre 2021</p>
                 </div>
                 <div>
                     <StudentTable/>
+
                 </div>
 
               </div>
-              <div className="flex w-3/7 pt-8 pr-20 pl-10">
+              <div className="flex pt-8 pr-10 pl-20">
                 <StudentAlert/>
               </div>
             </div>

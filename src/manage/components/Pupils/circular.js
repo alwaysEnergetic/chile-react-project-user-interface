@@ -37,7 +37,7 @@ import Tab from '@material-ui/core/Tab';
 
 
 
-  export default function Book() {
+  export default function Circular() {
 
     const [value, setValue] = React.useState(0);
   

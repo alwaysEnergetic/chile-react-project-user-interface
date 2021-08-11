@@ -27,7 +27,12 @@ const theme = createTheme({
     rightBoxBorder : {
       main: "#D0CDC6"
     },
-
+    greenButton: {
+      main: "#03413F"
+    },
+    evenColor: {
+      main: "#EDEAE5"
+    },
   },
 });
 

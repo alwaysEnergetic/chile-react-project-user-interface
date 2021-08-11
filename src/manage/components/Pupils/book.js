@@ -50,7 +50,7 @@ import PupilRatings from "./pupilRatings"
     };
   
   return (
-    <div>
+    <div className="min-w-61">
         <AntTabs
           value={value}
           orientation={'horizontal'}

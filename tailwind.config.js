@@ -7,9 +7,14 @@ module.exports = {
         lightYellow: { t1: "#FE441A" },
         lightGray: "#D1CDC5",
         tabBackground:'#f2f0ed',
-        contentBackground:'#f7f6f5'
+        contentBackground:'#f7f6f5',
+        mainTableColor:'#e5e1da',
+        tableTabs: "#03413f"
         },
-    fontFamily: {
+      textColor: {
+        buttonText: '#f7f6f5'
+      } , 
+      fontFamily: {
         'sans': ["Roboto"]
       },
       width: {
@@ -26,7 +31,12 @@ module.exports = {
       'full' : '9999px',
       'special': '26px',
 
-    }
+    },
+    minWidth: {
+      '0': '0',
+      '61': '978px',
+
+     }
   },
   variants: {
     extend: {},
