@@ -3,6 +3,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import ProfessorRatings from "../../../components/Professors/professorRatings";
+import ProfessorContent from "../../../components/Professors/professorContent";
+
+
 
   const AntTabs = withStyles({
     indicator: {
@@ -35,6 +38,7 @@ import ProfessorRatings from "../../../components/Professors/professorRatings";
        borderTopLeftRadius:20,
     }  
   })(Tab);
+
   export default function Professors() {
 
     const [value, setValue] = React.useState(0);
@@ -62,10 +66,12 @@ import ProfessorRatings from "../../../components/Professors/professorRatings";
         </AntTabs>
 
       {value===0 && <ProfessorRatings/>} 
-      {/* {value===1 && <Content2/>}
+      {value===1 && <ProfessorContent/>}
+      
+{/* 
       {value===2 && <Content3/>}
       {value===3 && <Content4/>}
-      {value===4 && <Content5/>} */}
+      {value===4 && <Content5/>}  */}
 
     </div>
   );

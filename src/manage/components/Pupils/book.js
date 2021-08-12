@@ -3,7 +3,10 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import PupilRatings from "./pupilRatings"  
+import PupilRatings from "./pupilRatings"  ;
+import ProfssorContent from "../../components/Professors/professorContent"   ;
+
+
 
   const AntTabs = withStyles({
     indicator: {
@@ -70,10 +73,12 @@ import PupilRatings from "./pupilRatings"
 
 
       {value===0 && <PupilRatings/>} 
+      {value===1 && <ProfssorContent/>}
+
       {/* {value===1 && <Content2/>}
       {value===2 && <Content3/>}
       {value===3 && <Content4/>}
-      {value===4 && <Content5/>} */}
+      {value===4 && <Content5/>}  */}
 
     </div>
   );

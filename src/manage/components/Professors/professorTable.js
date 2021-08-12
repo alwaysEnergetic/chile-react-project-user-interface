@@ -67,6 +67,8 @@ export default function ProfessorTable() {
     setPage(0);
   };
 
+
+  
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
