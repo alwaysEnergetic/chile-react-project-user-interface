@@ -22,8 +22,6 @@ const useStyles = makeStyles((theme) => ({
 const Home = () => {
   const classes = useStyles();
   const [tabIndex, setTabIndex] = useState(0);
-
-  console.log(tabIndex)
   return (
     <div className={classes.container}>
       <Header onChange = {setTabIndex}/>

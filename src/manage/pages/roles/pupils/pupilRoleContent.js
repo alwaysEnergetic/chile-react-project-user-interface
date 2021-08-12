@@ -8,12 +8,11 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import Book from "./book"  
-import Classroom from "./classroom"  
-import Circular from "./circular"  
-import Finance from "./finance"  
-import Admin from "../../pages/roles/admin"
-import Professors from "../../pages/roles/professors"
+import Book from "../../../components/Pupils/book" ; 
+import Classroom from "../../../components/Pupils/classroom"  ;
+import Circular from "../../../components/Pupils/circular"  ;
+import Finance from "../../../components/Pupils/finance"  ;
+import PupilContent from "../../../components/Pupils/pupilContent" ;
 
 const useStyles = makeStyles({
   root: {
@@ -53,9 +52,6 @@ const useStyles = makeStyles({
 
 
 });
-
-
-
 
 function StyledRadio(props) {
   const classes = useStyles();
@@ -106,7 +102,7 @@ const SubTab = withStyles({
 })(Tab);
 
 
-export default function PupilContent() {
+export default function PupilRoleContent() {
   //const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const[radioValue, setRadioValule] = React.useState("");
@@ -145,24 +141,24 @@ export default function PupilContent() {
       {value===2 && <div className="w-6/7 bg-contentBackground  rounded-tl-special rounded-r-special min-w-61"> <Circular/> </div>}
       {value===3 && <div className="w-6/7 bg-contentBackground  rounded-tl-special rounded-r-special min-w-61"> <Finance/> </div>}
 
-      <div className="w-10 h-10 bg-gray" style={{position:'absolute', bottom:250, right:64}}>
+      <div className="w-10 h-10 bg-gray" style={{position:'absolute', bottom:220, right:64}}>
       <FormControl component="fieldset">
           <RadioGroup defaultValue="roles" aria-label="roles" value={radioValue} onChange={handleChange} name="customized-radios">
             <FormControlLabel value="pupil"  control={<StyledRadio />} label={<span style={{ fontSize: '9px', display: "flex", alignItems: "center" }}>ALUMNO </span>}/>
             <FormControlLabel value="admin" control={<StyledRadio />} label={<span style={{ fontSize: '9px', display: "flex", alignItems: "center" }}>ADMINISTRATIVO </span>}/>
             <FormControlLabel value="teacher" control={<StyledRadio />}label={<span style={{ fontSize: '9px', display: "flex", alignItems: "center" }}>PROFESOR </span>}/>
             <FormControlLabel value="attroney" control={<StyledRadio />} label={<span style={{ fontSize: '9px', display: "flex", alignItems: "center" }}>APODERADO </span>}/>
-            <FormControlLabel value="external" control={<StyledRadio />} label={<span style={{ fontSize: '9px', display: "flex", alignItems: "center" }}>EXTERNO </span>}/>
+            <FormControlLabel value="external" control=  {<StyledRadio />} label={<span style={{ fontSize: '9px', display: "flex", alignItems: "center" }}>EXTERNO </span>}/>
 
           </RadioGroup>
         </FormControl>
       </div>
       
-      {radioValue==="pupil" &&  <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> <Book/> </div>}
-      {radioValue==="admin" && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> <Admin/> </div>}
-      {radioValue==="teacher" && <div className="w-6/7 bg-contentBackground rounded-tl-special rounded-r-special min-w-61"> <Professors/> </div>}
-      {radioValue==="attroney" && <h2>  attroney </h2>}
-      {radioValue==="external" && <h2> external </h2>}
+      {radioValue==="pupil" && <div> <PupilContent/> </div>}
+      {radioValue==="admin" && <div> admin </div>}
+      {radioValue==="teacher" && <div > teacher </div>}
+      {radioValue==="attroney" && <div>  attroney </div>}
+      {radioValue==="external" && <div> external </div>}
 
 
 

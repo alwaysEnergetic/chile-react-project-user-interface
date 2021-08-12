@@ -9,7 +9,8 @@ module.exports = {
         tabBackground:'#f2f0ed',
         contentBackground:'#f7f6f5',
         mainTableColor:'#e5e1da',
-        tableTabs: "#03413f"
+        tableTabs: "#03413f",
+        searchBtn: "#d1cdc5"
         },
       textColor: {
         buttonText: '#f7f6f5'

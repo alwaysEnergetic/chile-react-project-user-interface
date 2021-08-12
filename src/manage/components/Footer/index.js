@@ -10,13 +10,14 @@ const useStyles = makeStyles((theme) => ({
     // position: "fixed",
     // bottom: 0 ,
     width: "100%",
+    marginTop: "50px"
   },
 }));
 
 const Footer = (props) => {
   const classes = useStyles();
   return (
-    <div className={classes.container} style={{ marginTop: 2 }}>
+    <div className={classes.container}>
       <div className="flex justify-between">
         <div className="flex items-center">
           <div
