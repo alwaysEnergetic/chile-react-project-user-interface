@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import ProfessorSummaryTable from "./professorSummayTable";
+import ProfessorSummaryTable from "../widgets/summaryTable";
 
 const useStyles = makeStyles((theme) => ({
     navbar: {
@@ -31,6 +31,19 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
     },
 }));
+
+const apiFakeData = [
+    {title: "Adell Soto Martina Josefa", "N1":'', "N2":'', "N3":'', "N4":'', "N5":'', "N6":'', "N7":'', "N8":'', "N9":'', "N10":'', "N11":'', "N12":''},
+    {title: "Adell Soto Martina Josefa", "N1":'', "N2":'', "N3":'', "N4":'', "N5":'', "N6":'', "N7":'', "N8":'', "N9":'', "N10":'', "N11":'', "N12":''},
+    {title: "Adell Soto Martina Josefa", "N1":'', "N2":'', "N3":'', "N4":'', "N5":'', "N6":'', "N7":'', "N8":'', "N9":'', "N10":'', "N11":'', "N12":''},
+    {title: "Adell Soto Martina Josefa", "N1":'', "N2":'', "N3":'', "N4":'', "N5":'', "N6":'', "N7":'', "N8":'', "N9":'', "N10":'', "N11":'', "N12":''},
+    {title: "Adell Soto Martina Josefa", "N1":'', "N2":'', "N3":'', "N4":'', "N5":'', "N6":'', "N7":'', "N8":'', "N9":'', "N10":'', "N11":'', "N12":''},
+    {title: "Adell Soto Martina Josefa", "N1":'', "N2":'', "N3":'', "N4":'', "N5":'', "N6":'', "N7":'', "N8":'', "N9":'', "N10":'', "N11":'', "N12":''},
+    {title: "Adell Soto Martina Josefa", "N1":'', "N2":'', "N3":'', "N4":'', "N5":'', "N6":'', "N7":'', "N8":'', "N9":'', "N10":'', "N11":'', "N12":''},
+    {title: "Adell Soto Martina Josefa", "N1":'', "N2":'', "N3":'', "N4":'', "N5":'', "N6":'', "N7":'', "N8":'', "N9":'', "N10":'', "N11":'', "N12":''},
+    {title: "Adell Soto Martina Josefa", "N1":'', "N2":'', "N3":'', "N4":'', "N5":'', "N6":'', "N7":'', "N8":'', "N9":'', "N10":'', "N11":'', "N12":''},
+    {title: "Adell Soto Martina Josefa", "N1":'', "N2":'', "N3":'', "N4":'', "N5":'', "N6":'', "N7":'', "N8":'', "N9":'', "N10":'', "N11":'', "N12":''},
+]
 
 const ProfessorContent = () => {
     const classes = useStyles();
@@ -102,7 +115,7 @@ const ProfessorContent = () => {
 
             <div className={classes.tableBoard}>
                 <div>
-                    <ProfessorSummaryTable />
+                    <ProfessorSummaryTable data={apiFakeData}/>
                 </div>
             </div>
         </>
